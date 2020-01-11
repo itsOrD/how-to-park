@@ -5,4 +5,4 @@ import App from './App.jsx';
 
 const rootEl = document.getElementById('app');
 
-ReactDOM.render(<App />, roolEl);
+ReactDOM.render(<App />, rootEl);
