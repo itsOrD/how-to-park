@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 import { Box, Button, Heading } from 'grommet';
 import { Notification } from 'grommet-icons';
 
 const Header = (props) => {
+
+  const [count, setCount] = useState(0);
 
 	return (
 		<Box 
@@ -17,7 +19,10 @@ const Header = (props) => {
       {...props}
 		>
       <Heading level='3' margin='none'> HowToPark </Heading>
-      <Button icon={<Notification />} onclick={() => {}} />
+      <Button 
+        icon={<Notification />}
+        onClick={() => setCount(count + 1)} 
+      />
     </Box>
 	)
 };
