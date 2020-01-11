@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "nodemon server",
-    "react": "webpack -d --watch",
+    "build": "webpack -d --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
