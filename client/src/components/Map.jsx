@@ -7,7 +7,7 @@ class MyMap extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentZoomLevel: 12
+      currentZoomLevel: 11
     }
   }
 
@@ -15,17 +15,21 @@ class MyMap extends React.Component {
 
     const stamenTonerTiles = 'http://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.png';
     const stamenTonerAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-    const mapCenter = [39.9528, -75.1638];
-    const zoomLevel = 12;
+    const mapCenter = [47.598920, -122.333730];
+    const zoomLevel = 11;
     
     return (
-      <Box>
         <Map
+          style={{ height: 500, width: 400, borderStyle: 'solid', borderWidth: 5 }}
+          ref={m => { this.leafletMap = m; }}
           center={mapCenter}
           zoom={zoomLevel}
         >
+          <TileLayer
+            attribution={stamenTonerAttr}
+            url={stamenTonerTiles}
+          />
         </Map>
-      </Box>
     )
   }
 };

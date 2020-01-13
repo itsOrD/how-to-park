@@ -24,6 +24,9 @@ module.exports = {
       }
     ]
   },
+  watchOptions: {
+    poll: 1000,
+  },
   mode: 'development',
   resolve: {
     extensions: ['.js', '.jsx']
