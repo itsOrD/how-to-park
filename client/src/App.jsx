@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Grommet } from 'grommet';
-import Header from './components/Header.jsx';
-import MyMap from './components/Map.jsx';
+import Login from './components/Login.jsx';
+import MainPage from './components/MainPage.jsx';
 
 const App = (props) => {
 
-  const [map, setMap] = useState('');
+  const [view, setView] = useState('login')
 
   useEffect(() => {
     // call the function that inits GET for map here
@@ -25,25 +25,18 @@ const App = (props) => {
     },
   };
 
+  const renderView = () => {
+    if (view === 'login') {
+      return <Login />
+    } else {
+      return <MainPage />
+    }
+  }
+
   return (
     <Grommet theme={theme} full>
-      <Box fill>
-        <Header />
-        <Box direction='row' flex overflow={{ horizonatal: 'hidden' }}>
-          <Box flex align='center' justify='center'>
-            <MyMap />
-          </Box>
-          <Box
-            width='medium'
-            background='light-2'
-            elevation='small'
-            align='center'
-            justify='center'
-          >
-            sidebar
-          </Box>
-        </Box>
-      </Box>
+        {renderView()}
+        <button onClick={() => setView('')}>switch view</button>
     </Grommet>
   )
 };
