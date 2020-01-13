@@ -29,7 +29,7 @@ const App = (props) => {
     if (view === 'login') {
       return <Login />
     } else {
-      return <MainPage />
+      return <MainPage setView={setView} />
     }
   }
 
