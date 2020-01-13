@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Grommet } from 'grommet';
 import Header from './components/Header.jsx';
-import Map from './components/Map.jsx';
+import MyMap from './components/Map.jsx';
 
 const App = (props) => {
 
@@ -31,7 +31,7 @@ const App = (props) => {
         <Header />
         <Box direction='row' flex overflow={{ horizonatal: 'hidden' }}>
           <Box flex align='center' justify='center'>
-            <Map />
+            <MyMap />
           </Box>
           <Box
             width='medium'
