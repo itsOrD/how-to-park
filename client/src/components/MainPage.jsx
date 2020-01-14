@@ -1,9 +1,10 @@
 import React from 'react';
 import { Box, Button } from 'grommet';
+import { StreetView } from 'grommet-icons';
+import { Add, Logout } from 'grommet-icons';
 import Header from './Header.jsx';
 import MyMap from './MyMap.jsx';
-import { StreetView } from 'grommet-icons';
-import { Add, Logout } from "grommet-icons";
+import CarSpecs from './sidebar/CarSpecs.jsx';
 
 const MainPage = (props) => {
 
@@ -23,7 +24,7 @@ const MainPage = (props) => {
           align='center'
           justify='center'
         >
-          sidebar
+          <CarSpecs />
         </Box>
       </Box>
       <Button

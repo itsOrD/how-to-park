@@ -8,7 +8,7 @@ const LoginForm = (props) => {
 	return (
     <Box align="center" pad="large">
       <Form>
-        <LoginInput name="UserName" label="UserName" required />
+        <LoginInput name="UserName" label="UserName" required validate={{ regexp: /^[a-z]/i }}/>
         <LoginInput name="Password" label="Password" />
         <Box align="center" pad="small">
           <Button type="submit" label="Create Account" onClick={() => props.setView('mainPage')}/>
