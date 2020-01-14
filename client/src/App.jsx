@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Grommet } from 'grommet';
-import Login from './components/Login.jsx';
+import Login from './components/login/Login.jsx';
 import MainPage from './components/MainPage.jsx';
 
 const App = (props) => {
 
-  const [view, setView] = useState('login')
+  const [view, setView] = useState('login');
+
+  const mapCenter = [47.598920, -122.333730];
 
   useEffect(() => {
     // call the function that inits GET for map here
@@ -27,16 +29,15 @@ const App = (props) => {
 
   const renderView = () => {
     if (view === 'login') {
-      return <Login />
+      return <Login mapCenter={mapCenter} setView={setView} />
     } else {
-      return <MainPage setView={setView} />
+      return <MainPage setView={setView} mapCenter={mapCenter} />
     }
   }
 
   return (
     <Grommet theme={theme} full>
         {renderView()}
-        <button onClick={() => setView('')}>switch view</button>
     </Grommet>
   )
 };
