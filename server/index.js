@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static(__dirname + '/../public/dist'));
 
-// app.route('/')
-// 	.get(controller.FILLMEIN);
+app.route('/data')
+	.post(controller.save);
 
 app.listen(PORT, () => console.log('Server listening on PORT: ', PORT));

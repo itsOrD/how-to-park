@@ -10,20 +10,33 @@ import {
   RangeInput,
   Select,
   TextArea
-} from "grommet";
-import { grommet } from "grommet/themes";
+} from 'grommet';
+import { grommet } from 'grommet/themes';
+import $ from 'jquery';
+import useFormSubmit from './useFormSubmit.jsx';
+import { post } from 'axios';
 
 const CarSpecs = () => {
+
+  const save = (value) => {
+    post('/data', value)
+      .then(() => document.getElementById("carForm").reset())
+  }
 
 	return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">
         <Box width="medium">
           <Form
+            id="carForm"
             onReset={event => console.log(event)}
-            onSubmit={({ value }) => console.log("Submit", value)}
+            onSubmit={({ value }) => {
+              console.log("Submit", value);
+              save(value);
+            }}
           >
             <FormField
+              required
               label="Car Size"
               name="carSize"
               component={Select}
@@ -33,22 +46,24 @@ const CarSpecs = () => {
             <FormField
               label="Make/Model (optional)"
               name="make"
-              required
               validate={{ regexp: /^[a-z]/i }}
             />
             <FormField
+              required
               name="driverStatus"
               component={CheckBox}
               pad
               label="Driver?"
             />
             <FormField
-              name="ampm"
+              required
+              name="timeOfday"
               component={RadioButtonGroup}
               pad
               options={["morning", "mid-day", "evening", "night"]}
             />
             <FormField
+              required
               label="Difficulty level (low to high)"
               name="difficulty"
               component={RangeInput}
