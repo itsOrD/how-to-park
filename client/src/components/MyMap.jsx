@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box } from 'grommet';
 import { Map, TileLayer } from 'react-leaflet';
 import Control from 'react-leaflet-control';
+import MapMarkings from './MapMarkings.jsx';
 
 const MyMap = (props) => {
 
@@ -10,21 +11,23 @@ const MyMap = (props) => {
   const zoomLevel = 11;
 
   const [mapMid, setmapMid] = useState([47.598920, -122.333730]);
+  const [spots, setSpots] = useState([]);
 
   // ref={m => { this.leafletMap = m; }}
   
   return (
-      <Map
-        style={{ height: 500, width: 400, borderStyle: 'solid', borderWidth: 5 }}
+    <Map
+      style={{ height: 500, width: 400, borderStyle: 'solid', borderWidth: 5 }}
 
-        center={mapMid}
-        zoom={zoomLevel}
-      >
-        <TileLayer
-          attribution={stamenTonerAttr}
-          url={stamenTonerTiles}
-        />
-      </Map>
+      center={mapMid}
+      zoom={zoomLevel}
+    >
+      <TileLayer
+        attribution={stamenTonerAttr}
+        url={stamenTonerTiles}
+      />
+      {spots.length > 0 ? <MapMarkings spots={spots} /> : null}
+    </Map>
   )
 };
 
