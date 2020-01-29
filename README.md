@@ -4,7 +4,7 @@ GPS parking app powered by community.
 Create a user account, or login as a guest, and see a live interactive map of parking spots available near you!
 Once you've successfully parked, update and share real-time information with other users.
 
-![](.demoGifs/howToPark_guestLogin.gif)
+![](./demoGifs/howToPark_guestLogin.gif)
 
 ## Start Here
 
@@ -38,7 +38,7 @@ To run how-to-park you'll need to...
  * enter a password
  * click "Create Account"
  
-![](.demoGifs/howToPark_userLogin.gif)
+![](./demoGifs/howToPark_userLogin.gif)
 
 *Or...*
   * click "Guest Login"
