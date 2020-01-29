@@ -47,3 +47,9 @@ package-lock.json
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
+
+# other
+notes.txt
+
+# webpack bundle
+public/dist/bundle.js
