@@ -50,3 +50,6 @@ package-lock.json
 
 # other
 notes.txt
+
+# webpack bundle
+public/dist/bundle.js
