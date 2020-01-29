@@ -12,8 +12,6 @@ import {
   TextArea
 } from 'grommet';
 import { grommet } from 'grommet/themes';
-import $ from 'jquery';
-import useFormSubmit from './useFormSubmit.jsx';
 import { post } from 'axios';
 
 const CarSpecs = () => {
@@ -31,7 +29,7 @@ const CarSpecs = () => {
             id="carForm"
             onReset={event => console.log(event)}
             onSubmit={({ value }) => {
-              console.log("Submit", value);
+              console.log("Submiting: ", value);
               save(value);
             }}
           >

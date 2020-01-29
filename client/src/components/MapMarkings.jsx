@@ -7,7 +7,12 @@ const MapMarkings = ({ spots }) => {
       return (
         <Marker 
           key={spot.id} 
-          position={[Number.parseFloat(spot.latitude), Number.parseFloat(spot.longitude)]}
+          position={
+            [
+              Number.parseFloat(spot.latitude),
+              Number.parseFloat(spot.longitude)
+            ]
+          }
         >
           <Popup>
             {spot.size}

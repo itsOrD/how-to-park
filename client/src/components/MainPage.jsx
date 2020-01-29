@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Button } from 'grommet';
-import { StreetView } from 'grommet-icons';
-import { Add, Logout } from 'grommet-icons';
+import { Logout } from 'grommet-icons';
 import Header from './Header.jsx';
 import MyMap from './MyMap.jsx';
 import CarSpecs from './sidebar/CarSpecs.jsx';

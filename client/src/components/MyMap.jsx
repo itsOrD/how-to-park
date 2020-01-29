@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Box } from 'grommet';
+import React, { useState } from 'react';
 import { Map, TileLayer } from 'react-leaflet';
-import Control from 'react-leaflet-control';
+// import Control from 'react-leaflet-control';
 import MapMarkings from './MapMarkings.jsx';
 
 const MyMap = (props) => {

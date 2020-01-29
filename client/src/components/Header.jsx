@@ -1,6 +1,6 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState }  from 'react';
 import { Box, Button, Heading } from 'grommet';
-import { Notification, Update } from 'grommet-icons';
+import { Notification } from 'grommet-icons';
 
 const Header = (props) => {
 

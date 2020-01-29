@@ -1,7 +1,6 @@
 import React from 'react';
-import { Grommet, Box, Button, Form, Text } from 'grommet';
+import { Box, Button, Form } from 'grommet';
 import LoginInput from './LoginInput.jsx';
-import { StreetView } from 'grommet-icons';
 
 const LoginForm = (props) => {
 	

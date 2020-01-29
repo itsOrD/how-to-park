@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grommet, Anchor, Box, Button, Text, WorldMap } from 'grommet';
-import { Attraction, Car } from 'grommet-icons';
+import { Box } from 'grommet';
+import { Car } from 'grommet-icons';
 import LoginForm from './LoginForm.jsx';
 
 const LoginBox = (props) => {
