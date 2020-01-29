@@ -80,7 +80,7 @@ If you mess up, or park somewhere different just hit "Reset" and fill out the fo
  - - - 
 
 ## Project Roadmap 
-This is a MVP, concieved and produced in less than 48 hours.  Once funcionality is improved, incljuding intrgrating oAuth and location sharing future system design plans include: 
+This is an MVP, conceived and produced in less than 48 hours. Once functionality is improved, including integrating oAuth and location sharing future system design plans include:
  * create a Kubernetes pod
  * deploy on Microsoft Azure
  * persist data with Azure hosted Cassandra cluster
