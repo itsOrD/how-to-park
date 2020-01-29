@@ -3,7 +3,7 @@ import { Box, Button } from 'grommet';
 import { Logout } from 'grommet-icons';
 import Header from './Header.jsx';
 import MyMap from './MyMap.jsx';
-import CarSpecs from './sidebar/CarSpecs.jsx';
+import SpotForm from './sidebar/SpotForm.jsx';
 
 const MainPage = (props) => {
 
@@ -23,7 +23,7 @@ const MainPage = (props) => {
           align='center'
           justify='center'
         >
-          <CarSpecs />
+          <SpotForm />
         </Box>
       </Box>
       <Button

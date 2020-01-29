@@ -1,7 +1,7 @@
 {
   "name": "how-to-park",
   "version": "1.0.0",
-  "description": "crowd source parking maps",
+  "description": "crowd sourced interactive parking maps",
   "main": "index.js",
   "directories": {
     "test": "test"
