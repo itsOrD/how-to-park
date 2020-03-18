@@ -24,12 +24,9 @@ module.exports = {
       }
     ]
   },
-<<<<<<< HEAD
   watchOptions: {
     poll: 1000,
   },
-=======
->>>>>>> master
   mode: 'development',
   resolve: {
     extensions: ['.js', '.jsx']

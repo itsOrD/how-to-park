@@ -19,7 +19,7 @@ To run how-to-park you'll need to...
   clone locally
 ```
 
-**Then** *(in terminal)***:**
+**Then** *(in separate terminal tabs)***:**
 ```
   npm run build
   npm start

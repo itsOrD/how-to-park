@@ -8,11 +8,7 @@
   },
   "scripts": {
     "start": "nodemon server",
-<<<<<<< HEAD
-    "react": "webpack --progress --colors -d --watch",
-=======
-    "build": "webpack -d --watch",
->>>>>>> master
+    "build": "webpack --progress --colors -d --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
