@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "nodemon server",
-    "build": "webpack --progress --colors -d --watch",
+    "build": "webpack --progress --color --mode development --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,16 +25,16 @@
   },
   "homepage": "https://github.com/itsOrD/how-to-park#readme",
   "dependencies": {
-    "axios": "^0.19.1",
-    "grommet": "^2.9.0",
-    "grommet-icons": "^4.4.0",
-    "jquery": "^3.4.1",
-    "leaflet": "^1.6.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-leaflet": "^2.6.1",
+    "axios": "^1.9.0",
+    "grommet": "^2.47.0",
+    "grommet-icons": "^4.13.0",
+    "jquery": "^3.7.1",
+    "leaflet": "^1.9.4",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-leaflet": "^2.8.0",
     "react-leaflet-control": "^2.1.2",
-    "styled-components": "^4.4.1"
+    "styled-components": "^6.1.18"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
@@ -42,11 +42,11 @@
     "@babel/preset-react": "^7.7.0",
     "babel": "^6.23.0",
     "babel-loader": "^8.0.6",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.8.4",
-    "nodemon": "^2.0.2",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "mongoose": "^8.15.1",
+    "nodemon": "^3.1.10",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
   }
 }
