@@ -17,6 +17,7 @@ To run how-to-park you'll need to...
 ```
   fork this repo
   clone locally
+  npm install
 ```
 
 **Then** *(in separate terminal tabs)***:**
