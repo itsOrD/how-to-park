@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Model = require('./models/park.js')
 
 mongoose.connect('mongodb://localhost/howtopark', {useNewUrlParser: true});
 

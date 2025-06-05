@@ -12,7 +12,7 @@ const MainPage = (props) => {
 	return (
     <Box fill>
       <Header />
-      <Box direction='row' flex overflow={{ horizonatal: 'hidden' }}>
+      <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
         <Box flex align='center' justify='center'>
           <MyMap />
         </Box>
