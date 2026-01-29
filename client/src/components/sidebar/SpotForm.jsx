@@ -12,12 +12,12 @@ import {
   TextArea
 } from 'grommet';
 import { grommet } from 'grommet/themes';
-import { post } from 'axios';
+import axios from 'axios';
 
 const SpotForm = () => {
 
   const save = (value) => {
-    post('/data', value)
+    axios.post('/data', value)
       .then(() => document.getElementById("carForm").reset())
   }
 
