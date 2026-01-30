@@ -30,10 +30,9 @@
     "grommet-icons": "^4.13.0",
     "jquery": "^3.7.1",
     "leaflet": "^1.9.4",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-leaflet": "^2.8.0",
-    "react-leaflet-control": "^2.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {
