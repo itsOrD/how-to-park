@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Map, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 // import Control from 'react-leaflet-control';
 import MapMarkings from './MapMarkings.jsx';
 
@@ -15,7 +15,7 @@ const MyMap = (props) => {
   // ref={m => { this.leafletMap = m; }}
   
   return (
-    <Map
+    <MapContainer
       style={{ height: 500, width: 400, borderStyle: 'solid', borderWidth: 5 }}
 
       center={mapMid}
@@ -26,7 +26,7 @@ const MyMap = (props) => {
         url={stamenTonerTiles}
       />
       {spots.length > 0 ? <MapMarkings spots={spots} /> : null}
-    </Map>
+    </MapContainer>
   )
 };
 
