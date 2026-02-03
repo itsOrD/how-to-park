@@ -70,6 +70,29 @@ If you mess up, or park somewhere different just hit "Reset" and fill out the fo
 
  - - -
 
+## Testing
+
+This project includes comprehensive test coverage with both unit and E2E tests.
+
+**Run all tests:**
+```bash
+npm test
+```
+
+**Run unit tests:**
+```bash
+npm run test:unit
+```
+
+**Run E2E tests:**
+```bash
+npm run test:e2e
+```
+
+For detailed testing documentation, see [TESTING.md](TESTING.md).
+
+ - - -
+
 ## Built With
  * ReactJS (ES6+ && hooks)
  * Grommet
@@ -77,6 +100,8 @@ If you mess up, or park somewhere different just hit "Reset" and fill out the fo
  * Express.js
  * Node.js
  * Webpack/Babel
+ * Jest & React Testing Library (unit testing)
+ * Playwright (E2E testing)
 
  - - - 
 
