@@ -10,10 +10,10 @@ const MainPage = (props) => {
   const { setView } = props;
 
 	return (
-    <Box fill>
+    <Box fill data-testid="main-page">
       <Header />
       <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
-        <Box flex align='center' justify='center'>
+        <Box flex align='center' justify='center' data-testid="map-section">
           <MyMap />
         </Box>
         <Box
@@ -22,6 +22,7 @@ const MainPage = (props) => {
           elevation='small'
           align='center'
           justify='center'
+          data-testid="form-section"
         >
           <SpotForm />
         </Box>
@@ -31,6 +32,7 @@ const MainPage = (props) => {
         label="Logout"
         gap="500px"
         onClick={() => setView('login')}
+        data-testid="logout-button"
       />
     </Box>
 	)
