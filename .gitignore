@@ -53,3 +53,9 @@ notes.txt
 
 # webpack bundle
 public/dist/bundle.js
+
+# Test results and coverage
+test-results/
+coverage/
+playwright-report/
+.nyc_output
