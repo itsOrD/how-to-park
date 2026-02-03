@@ -5,23 +5,30 @@ test.describe('Main Page Features', () => {
     // Navigate to app and login
     await page.goto('/');
     await page.getByRole('button', { name: 'Guest Login' }).click();
-    await page.waitForTimeout(1000);
+    // Wait for main page to load
+    await expect(page.getByTestId('main-page')).toBeVisible({ timeout: 10000 });
   });
 
   test('should display header with title', async ({ page }) => {
     await expect(page.getByRole('heading', { name: 'HowToPark', level: 3 })).toBeVisible();
   });
 
-  test('should display map with zoom controls', async ({ page }) => {
+  test('should display map section with controls', async ({ page }) => {
+    // Check for map section
+    await expect(page.getByTestId('map-section')).toBeVisible();
+    
     // Check for Leaflet map controls
     await expect(page.getByRole('button', { name: 'Zoom in' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Zoom out' })).toBeVisible();
     
-    // Check for Leaflet attribution
+    // Check for Leaflet attribution (proving map is loaded)
     await expect(page.getByRole('link', { name: 'Leaflet' })).toBeVisible();
   });
 
-  test('should display parking spot form with all fields', async ({ page }) => {
+  test('should display parking spot form with all required fields', async ({ page }) => {
+    // Check form section exists
+    await expect(page.getByTestId('form-section')).toBeVisible();
+    
     // Check form fields
     await expect(page.getByText('Car Size')).toBeVisible();
     await expect(page.getByText('Make/Model (optional)')).toBeVisible();
@@ -45,27 +52,26 @@ test.describe('Main Page Features', () => {
     await expect(page.getByRole('button', { name: 'Save' })).toBeVisible();
   });
 
-  test('should interact with map zoom controls', async ({ page }) => {
+  test('should have working map zoom controls', async ({ page }) => {
     const zoomInButton = page.getByRole('button', { name: 'Zoom in' });
     const zoomOutButton = page.getByRole('button', { name: 'Zoom out' });
     
-    // Click zoom in
+    // Verify buttons are clickable
+    await expect(zoomInButton).toBeEnabled();
+    await expect(zoomOutButton).toBeEnabled();
+    
+    // Click zoom controls
     await zoomInButton.click();
     await page.waitForTimeout(500);
-    
-    // Click zoom out
     await zoomOutButton.click();
     await page.waitForTimeout(500);
     
-    // Buttons should still be visible
+    // Buttons should still be visible and enabled after clicks
     await expect(zoomInButton).toBeVisible();
     await expect(zoomOutButton).toBeVisible();
   });
 
-  test('should interact with form fields', async ({ page }) => {
-    // Fill in Make/Model
-    const makeModelInput = page.getByRole('textbox').filter({ hasText: /Make/ }).or(page.locator('input[name="make"]'));
-    
+  test('should allow form interactions', async ({ page }) => {
     // Check Driver checkbox
     const driverCheckbox = page.getByRole('checkbox', { name: 'Driver?' });
     await driverCheckbox.check();
@@ -75,10 +81,13 @@ test.describe('Main Page Features', () => {
     const morningRadio = page.getByRole('radio', { name: 'morning' });
     await morningRadio.check();
     await expect(morningRadio).toBeChecked();
+    
+    // Verify form section is still visible
+    await expect(page.getByTestId('form-section')).toBeVisible();
   });
 
-  test('should have working logout button', async ({ page }) => {
-    const logoutButton = page.getByRole('button', { name: /Logout/ });
+  test('should have functional logout button that returns to login', async ({ page }) => {
+    const logoutButton = page.getByTestId('logout-button');
     
     await expect(logoutButton).toBeVisible();
     await expect(logoutButton).toBeEnabled();
@@ -87,6 +96,9 @@ test.describe('Main Page Features', () => {
     await logoutButton.click();
     
     // Should return to login page
-    await expect(page.getByRole('heading', { name: 'Login' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Login' })).toBeVisible({ timeout: 5000 });
+    
+    // Login page elements should be present
+    await expect(page.getByRole('button', { name: 'Guest Login' })).toBeVisible();
   });
 });

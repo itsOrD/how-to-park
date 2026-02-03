@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 test.describe('Login Flow', () => {
-  test('should display login page with all elements', async ({ page }) => {
+  test('should display login page with all required elements', async ({ page }) => {
     await page.goto('/');
     
     // Check page title
@@ -10,7 +10,7 @@ test.describe('Login Flow', () => {
     // Check login heading
     await expect(page.getByRole('heading', { name: 'Login' })).toBeVisible();
     
-    // Check form elements
+    // Check form elements by text content (more reliable)
     await expect(page.getByText('UserName')).toBeVisible();
     await expect(page.getByText('Password')).toBeVisible();
     
@@ -19,20 +19,18 @@ test.describe('Login Flow', () => {
     await expect(page.getByRole('button', { name: 'Guest Login' })).toBeVisible();
   });
 
-  test('should login as guest and navigate to main page', async ({ page }) => {
+  test('should successfully navigate to main page after guest login', async ({ page }) => {
     await page.goto('/');
     
     // Click Guest Login button
     await page.getByRole('button', { name: 'Guest Login' }).click();
     
-    // Wait for navigation to complete
-    await page.waitForTimeout(1000);
+    // Wait for navigation by checking for main page elements
+    await expect(page.getByRole('heading', { name: 'HowToPark', level: 3 })).toBeVisible({ timeout: 10000 });
     
-    // Verify we're on the main page
-    await expect(page.getByRole('heading', { name: 'HowToPark', level: 3 })).toBeVisible();
-    
-    // Check main page elements
-    await expect(page.getByRole('button', { name: /Logout/ })).toBeVisible();
+    // Verify we're on the main page by checking for key elements
+    await expect(page.getByTestId('main-page')).toBeVisible();
+    await expect(page.getByTestId('logout-button')).toBeVisible();
   });
 
   test('should logout and return to login page', async ({ page }) => {
@@ -40,13 +38,13 @@ test.describe('Login Flow', () => {
     
     // Login as guest
     await page.getByRole('button', { name: 'Guest Login' }).click();
-    await page.waitForTimeout(1000);
+    await expect(page.getByTestId('main-page')).toBeVisible({ timeout: 10000 });
     
     // Click logout
-    await page.getByRole('button', { name: /Logout/ }).click();
+    await page.getByTestId('logout-button').click();
     
     // Verify we're back on login page
-    await expect(page.getByRole('heading', { name: 'Login' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Login' })).toBeVisible({ timeout: 5000 });
     await expect(page.getByRole('button', { name: 'Guest Login' })).toBeVisible();
   });
 });
