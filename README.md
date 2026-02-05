@@ -6,6 +6,14 @@ Once you've successfully parked, update and share real-time information with oth
 
 ![](./demoGifs/howToPark_guestLogin.gif)
 
+## Features
+
+- **Interactive Leaflet Map**: Black and white OpenStreetMap tiles with zoom and pan controls
+- **Geolocation Support**: Map automatically centers on your location (with Seattle fallback)
+- **Parking Spot Submission**: Share parking information via the side-panel form
+- **Responsive Design**: Clean, mobile-friendly interface built with Grommet UI
+- **Comprehensive Testing**: Full unit and E2E test coverage with Jest and Playwright
+
 ## Start Here
 
 To run how-to-park you'll need to...
@@ -25,6 +33,8 @@ To run how-to-park you'll need to...
   npm run build
   npm start
 ```
+
+*Note: The app will run without MongoDB - database errors are handled gracefully.*
 
 
 ## Login
@@ -47,17 +57,23 @@ To run how-to-park you'll need to...
 
 ## Use the App
 
-Now that you're logged in you can interact with the map and leave new 
+Now that you're logged in you can interact with the map and leave new parking spot information.
 
-*Note: location sharing is currently not enabled, but it can be toggled in the myMap.jsx component)*
-
-#### The map
+#### The Map
 
 ![](./demoGifs/howToPark_mapInteraction.gif)
 
-The map is a stylized Leaflet.js component with typical interactie capabilities.  
-Pinch or click to zoom in or out.
-Click and pull or drag finger to move.
+The map is a Leaflet.js component using OpenStreetMap tiles with interactive capabilities:
+- **Geolocation**: Automatically centers on your location (permission required)
+- **Zoom**: Use + and - buttons or pinch/scroll to zoom
+- **Pan**: Click and drag or swipe to move around the map
+- **Responsive**: Full-width layout that adapts to your screen
+
+**Map Details:**
+- Tiles: OpenStreetMap (black and white style)
+- Default center: Seattle, WA (47.598920, -122.333730)
+- Zoom level: 11
+- Real-time geolocation support with fallback
 
 #### The spot finder form (side-panel):
 
@@ -94,14 +110,30 @@ For detailed testing documentation, see [TESTING.md](TESTING.md).
  - - -
 
 ## Built With
- * ReactJS (ES6+ && hooks)
- * Grommet
- * Mongo/Mongoose
- * Express.js
- * Node.js
- * Webpack/Babel
- * Jest & React Testing Library (unit testing)
- * Playwright (E2E testing)
+ * **ReactJS** (ES6+ with hooks)
+ * **Leaflet.js** - Interactive mapping library
+ * **OpenStreetMap** - Map tile provider
+ * **Grommet** - React component library for UI
+ * **MongoDB/Mongoose** - Database (optional)
+ * **Express.js** - Web server
+ * **Node.js** - Runtime environment
+ * **Webpack/Babel** - Build tools
+ * **Jest & React Testing Library** - Unit testing
+ * **Playwright** - E2E testing
+
+ - - - 
+
+## Recent Updates
+
+### Map Rendering Fix (Feb 2026)
+- Fixed Leaflet CSS loading (now bundled locally)
+- Switched to OpenStreetMap tiles for reliability
+- Added geolocation support with automatic centering
+- Improved map styling and responsiveness
+- Enhanced error handling (MongoDB connection failures)
+- Comprehensive test coverage (unit + E2E)
+
+For detailed information, see [MAP_FIX_SUMMARY.md](MAP_FIX_SUMMARY.md).
 
  - - - 
 
