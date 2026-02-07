@@ -6,6 +6,28 @@ Once you've successfully parked, update and share real-time information with oth
 
 ![](./demoGifs/howToPark_guestLogin.gif)
 
+## Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/itsOrD/how-to-park.git
+cd how-to-park
+
+# Install dependencies
+npm install
+
+# Build the application
+npm run build
+
+# Start the server (in a new terminal)
+npm start
+
+# Open your browser
+# Navigate to http://localhost:1111
+```
+
+**Note:** MongoDB is optional - the app runs without it (database errors are handled gracefully).
+
 ## Features
 
 - **Interactive Leaflet Map**: Black and white OpenStreetMap tiles with zoom and pan controls
