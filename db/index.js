@@ -1,7 +1,10 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/howtopark';
+
 // Connect to MongoDB with error handling
-mongoose.connect('mongodb://localhost/howtopark', {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   serverSelectionTimeoutMS: 5000 // Timeout after 5s instead of 30s
 }).catch(err => {
