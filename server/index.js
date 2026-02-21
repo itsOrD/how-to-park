@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 
 const controller = require('../db/controllers/dbcontrol.js');
 
 const app = express();
-const PORT = 1111;
+const PORT = process.env.PORT || 1111;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
