@@ -5,8 +5,7 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/howtopark';
 
 // Connect to MongoDB with error handling
 mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true,
-  serverSelectionTimeoutMS: 5000 // Timeout after 5s instead of 30s
+  serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
 }).catch(err => {
   console.log('MongoDB connection error (continuing without DB):', err.message);
 });

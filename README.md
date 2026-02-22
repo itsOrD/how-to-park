@@ -6,6 +6,8 @@ Once you've successfully parked, update and share real-time information with oth
 
 ![](./demoGifs/howToPark_guestLogin.gif)
 
+[![CI](https://github.com/itsOrD/how-to-park/actions/workflows/ci.yml/badge.svg)](https://github.com/itsOrD/how-to-park/actions/workflows/ci.yml)
+
 ## Quick Start
 
 ```bash
@@ -24,6 +26,27 @@ npm start
 
 # Open your browser
 # Navigate to http://localhost:1111
+```
+
+## Docker
+
+Run the full stack (app + MongoDB) with a single command:
+
+```bash
+# Copy and customise environment variables
+cp .env.example .env
+
+# Build and start all services
+docker compose up --build
+
+# Open your browser
+# Navigate to http://localhost:1111
+```
+
+Stop the services:
+
+```bash
+docker compose down
 ```
 
 **Note:** MongoDB is optional - the app runs without it (database errors are handled gracefully).
